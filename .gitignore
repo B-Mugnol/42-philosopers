@@ -1,15 +1,15 @@
 ###	Ignore all
 *
 
-
 ###	Except these specific files:
+!philo
 # Headers
-!inc
-!inc/*.h
+!philo/inc
+!philo/inc/*.h
 
 # Source
-!src
-!src/**
+!philo/src
+!philo/src/*.c
 
 # Makefile
 !Makefile

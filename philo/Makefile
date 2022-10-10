@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 21:48:28 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/10/10 22:02:13 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/10/11 00:57:43 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ C_INCLUDE	:=	$(addprefix -include-pch , $(C_HEADER))
 
 
 # LIBFT
-LIBFT_DIR	:=	../../fase_1/libft
+LIBFT_DIR	:=	../../../fase_1/libft
 LIBFT_H_INC	:=	-I$(LIBFT_DIR)/inc
 LIBFT		:=	$(LIBFT_DIR)/libft.a
 
