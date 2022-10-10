@@ -10,7 +10,6 @@
 # Source
 !src
 !src/**
-!src/**.c
 
 # Makefile
 !Makefile
