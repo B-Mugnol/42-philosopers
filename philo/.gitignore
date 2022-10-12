@@ -2,14 +2,13 @@
 *
 
 ###	Except these specific files:
-!philo
 # Headers
-!philo/inc
-!philo/inc/*.h
+!inc
+!inc/*.h
 
 # Source
-!philo/src
-!philo/src/*.c
+!src
+!src/*.c
 
 # Makefile
 !Makefile
