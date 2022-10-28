@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 21:48:28 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/10/11 00:57:43 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/10/20 17:14:44 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
 SRC_DIR		:=	src
-SRC			:=	main.c
+SRC			:=	main.c	error.c	verify.c	setup.c
 
 # Object
 OBJ_DIR		:=	obj
@@ -83,8 +83,12 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
 # Run program using valgrind
-vg:
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+ifeq (vg,$(firstword $(MAKECMDGOALS)))
+VG_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+$(eval $(VG_ARGS):;@:)
+endif
+vg: all
+	valgrind -q --tool=helgrind ./$(NAME) $(VG_ARGS)
 
 # Norm: checks code for norm errors
 norm:
