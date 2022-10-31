@@ -20,11 +20,11 @@
 
 typedef struct s_config
 {
-	int	philosopher_count;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-	int	minimum_eat_count;
+	int		philosopher_count;
+	long	time_to_die_usec;
+	long	time_to_eat_usec;
+	long	time_to_sleep_usec;
+	int		minimum_eat_count;
 }	t_config;
 
 // utils.c
