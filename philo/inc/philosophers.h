@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:55:16 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/10/20 17:26:12 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/10/31 20:22:56 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 # define PHILOSOPHERS_H
 
 # include <stdlib.h>
-# include <stdio.h>
-# include "libft.h"
 
 # define INCORRECT_USAGE	2
+# define MILLI_TO_MICRO		1000
 
 typedef struct s_config
 {
@@ -27,6 +26,11 @@ typedef struct s_config
 	int	time_to_sleep;
 	int	minimum_eat_count;
 }	t_config;
+
+// utils.c
+int			is_digit_str(const char *str);
+int			ft_atoi(const char *s);
+void		ft_putstr_fd(char *s, int fd);
 
 // error.c
 int			generic_error(int exit_code, char *locale, char *msg, char *usage);
