@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 21:48:28 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/10/31 20:04:54 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/10/31 21:32:38 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
 SRC_DIR		:=	src
-SRC			:=	main.c	error.c	setup.c	utils.c	verify.c
+SRC			:=	main.c	error.c	setup.c time.c	utils.c	verify.c
 
 # Object
 OBJ_DIR		:=	obj
