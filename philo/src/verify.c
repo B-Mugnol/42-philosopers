@@ -6,13 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:08:02 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/10/20 21:20:32 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/10/31 20:23:37 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-static int	is_digit_str(const char *str);
 
 int	verify_args(int argc, char **argv)
 {
@@ -22,7 +20,8 @@ int	verify_args(int argc, char **argv)
 		return (generic_error(INCORRECT_USAGE, argv[0],
 				"Invalid argument",
 				"./philo <number_of_philosophers> <time_to_die> <time_to_eat> \
-<time_to_sleep> [<number_of_times_each_philosopher_must_eat>]"));
+<time_to_sleep> [<number_of_times_each_philosopher_must_eat>]\
+\nTimes must be in milliseconds."));
 	index = 1;
 	while (argv[index])
 	{
@@ -35,18 +34,4 @@ int	verify_args(int argc, char **argv)
 		index++;
 	}
 	return (EXIT_SUCCESS);
-}
-
-static int	is_digit_str(const char *str)
-{
-	if (!str || !*str || !ft_isdigit(*str))
-		return (0);
-	str++;
-	while (*str)
-	{
-		if (!ft_isdigit(*str))
-			return (0);
-		str++;
-	}
-	return (1);
 }
