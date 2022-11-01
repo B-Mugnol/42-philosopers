@@ -6,17 +6,37 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:01 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/01 01:08:10 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:08:26 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINES_H
 # define DEFINES_H
 
+# include <pthread.h>
+# include <sys/time.h>
+
 # define INCORRECT_USAGE	2
 
 # define MILLI_TO_MICRO		1000
 # define UNIT_TO_MICRO		1000000
+
+typedef enum e_action
+{
+	TAKE,
+	EAT,
+	SLEEP,
+	THINK,
+	DIE
+}	t_action;
+
+typedef struct s_philo
+{
+	int			id;
+	int			eat_count;
+	t_action	curr_action;
+	suseconds_t	last_ate;
+}	t_philo;
 
 typedef struct s_config
 {
@@ -27,13 +47,12 @@ typedef struct s_config
 	int			minimum_eat_count;
 }	t_config;
 
-typedef enum e_action
+typedef struct s_table
 {
-	TAKE,
-	EAT,
-	SLEEP,
-	THINK,
-	DEAD
-}	t_action;
+	int				philo_count;
+	struct s_philo	*philo;
+	pthread_mutex_t	*fork;
+	pthread_mutex_t	lock;
+}	t_table;
 
 #endif
