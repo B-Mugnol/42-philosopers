@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 21:48:28 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/10/31 21:32:38 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/11/01 01:08:30 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ NAME		:=	philo
 H_MASTER	:=	master.h
 # Headers
 HEADER_DIR	:=	inc
-HEADER		:=	philosophers.h
+HEADER		:=	defines.h	philosophers.h
 H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
