@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 21:48:28 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/11/01 01:08:30 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/11/02 00:10:37 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,13 +27,14 @@ NAME		:=	philo
 # Header that includes all headers
 H_MASTER	:=	master.h
 # Headers
-HEADER_DIR	:=	inc
-HEADER		:=	defines.h	philosophers.h
+HEADER_DIR	:=	inc	src/setup
+HEADER		:=	defines.h	setup.h	philosophers.h
 H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
-SRC_DIR		:=	src
-SRC			:=	main.c	error.c	setup.c time.c	utils.c	verify.c
+SRC_DIR		:=	src	src/setup
+SRC			:=	main.c	error.c time.c	utils.c	verify.c
+SRC			+=	dismount.c	init.c	setup.c
 
 # Object
 OBJ_DIR		:=	obj

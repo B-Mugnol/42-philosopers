@@ -9,6 +9,9 @@
 # Source
 !src
 !src/*.c
+!src/setup/
+!src/setup/*.c
+!src/setup/*.h
 
 # Makefile
 !Makefile

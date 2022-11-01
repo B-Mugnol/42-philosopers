@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   setup.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:52:50 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/02 00:17:59 by bmugnol-         ###   ########.fr       */
+/*   Created: 2022/11/02 00:02:59 by bmugnol-          #+#    #+#             */
+/*   Updated: 2022/11/02 00:12:17 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#ifndef SETUP_H
+# define SETUP_H
 
-int	main(int argc, char **argv)
-{
-	t_config	*config;
-	t_table		*table;
+# include "defines.h"
 
-	config = get_config(argc, argv);
-	if (config == NULL)
-		return (INCORRECT_USAGE);
-	table = get_table(config->philosopher_count);
-	if (!table)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
-}
+// setup.c
+t_config		*get_config(int argc, char **argv);
+t_table			*get_table(int philo_count);
+
+// init.c
+t_philo			*init_philosophers(int philo_count);
+pthread_mutex_t	*init_forks(int fork_count);
+
+// dismount.c
+void			*dismount_forks(int fork_count, pthread_mutex_t *fork);
+void			*dismount_table(t_table *table);
+
+#endif
