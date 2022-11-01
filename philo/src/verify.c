@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:08:02 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/10/31 22:52:20 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:17:02 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	verify_args(int argc, char **argv)
 			return (generic_error(INCORRECT_USAGE, argv[0],
 					"Invalid argument: numeric (integer) argument required",
 					NULL));
-		if (ft_atoi(argv[index]) <= 0 || ft_atoi(argv[index]) > UNIT_TO_MICRO)
+		if (ft_atoi(argv[index]) <= 0)
 			return (generic_error(INCORRECT_USAGE, argv[0],
-					"Invalid argument: argument must be a positive integer, \
-equal to or lesser than 1 million", NULL));
+					"Invalid argument: argument must be a positive integer",
+					NULL));
 		index++;
 	}
 	return (EXIT_SUCCESS);
