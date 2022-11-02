@@ -6,13 +6,13 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:45:47 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/02 00:07:25 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/02 01:27:42 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-t_philo	*init_philosophers(int philo_count)
+t_philo	*init_philosophers(int philo_count, t_table *table)
 {
 	t_philo	*philo;
 
@@ -31,7 +31,8 @@ t_philo	*init_philosophers(int philo_count)
 			.id = philo_count,
 			.eat_count = 0,
 			.curr_action = THINK,
-			.last_ate = 0};
+			.last_ate = 0,
+			.table = table};
 		philo_count--;
 	}
 	return (philo);

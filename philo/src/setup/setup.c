@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:20:35 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/02 00:07:46 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/02 01:28:01 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_table	*get_table(int philo_count)
 		return (NULL);
 	}
 	table->philo_count = philo_count;
-	table->philo = init_philosophers(philo_count);
+	table->philo = init_philosophers(philo_count, table);
 	if (!table->philo)
 		return (NULL);
 	table->fork = init_forks(philo_count);

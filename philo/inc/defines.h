@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:01 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/02 00:08:26 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/02 01:30:37 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ typedef enum e_action
 
 typedef struct s_philo
 {
-	int			id;
-	int			eat_count;
-	t_action	curr_action;
-	suseconds_t	last_ate;
+	int				id;
+	int				eat_count;
+	t_action		curr_action;
+	suseconds_t		last_ate;
+	struct s_table	*table;
 }	t_philo;
 
 typedef struct s_config
