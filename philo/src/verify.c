@@ -6,10 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:08:02 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/02 00:17:02 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/13 04:01:03 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "philosophers.h"
 
 int	verify_args(int argc, char **argv)
@@ -22,8 +23,8 @@ int	verify_args(int argc, char **argv)
 				"./philo <number_of_philosophers> <time_to_die> <time_to_eat> \
 <time_to_sleep> [<number_of_times_each_philosopher_must_eat>]\
 \nTimes must be in milliseconds."));
-	index = 1;
-	while (argv[index])
+	index = 0;
+	while (argv[++index])
 	{
 		if (!is_digit_str(argv[index]))
 			return (generic_error(INCORRECT_USAGE, argv[0],
@@ -33,7 +34,10 @@ int	verify_args(int argc, char **argv)
 			return (generic_error(INCORRECT_USAGE, argv[0],
 					"Invalid argument: argument must be a positive integer",
 					NULL));
-		index++;
+		if (index == 1 && ft_atoi(argv[index]) > MAX_THREADS - 2)
+			return (generic_error(INCORRECT_USAGE, argv[0],
+					"Invalid argument: number_of_philosophers exceeds maximum \
+allowed (MAX_THREADS).", NULL));
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
