@@ -6,11 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 02:05:53 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/10/31 20:07:46 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/13 05:01:32 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <sys/time.h>
 
 static size_t	ft_strlen(const char *s)
 {
@@ -20,13 +21,6 @@ static size_t	ft_strlen(const char *s)
 	while (*p != '\0')
 		p++;
 	return (p - s);
-}
-
-static int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
 }
 
 void	ft_putstr_fd(char *s, int fd)
@@ -41,12 +35,13 @@ void	ft_putstr_fd(char *s, int fd)
 
 int	is_digit_str(const char *str)
 {
-	if (!str || !*str || !ft_isdigit(*str))
+	if (!str || !*str)
 		return (0);
-	str++;
+	if (*str == '+' || *str == '-')
+		str++;
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
+		if (!(*str >= '0' && *str <= '9'))
 			return (0);
 		str++;
 	}
@@ -66,10 +61,27 @@ int	ft_atoi(const char *s)
 		sign = -1;
 	if (*s == '-' || *s == '+')
 		s++;
-	while (ft_isdigit(*s))
+	while (*s >= '0' && *s <= '9')
 	{
 		num = 10 * num + *s - ('0' - 0);
 		s++;
 	}
 	return (num * sign);
+}
+
+int	random_bool(void)
+{
+	static long		seed = 0;
+	struct timeval	curr_time;
+
+	if (seed == 0)
+	{
+		seed = 42;
+		if (gettimeofday(&curr_time, NULL) == -1)
+			return (seed & 1);
+		if (curr_time.tv_usec < 2147483647)
+			seed = curr_time.tv_usec;
+	}
+	seed = (1103515245 * seed + 12345) % 2147483647;
+	return (seed & 1);
 }
