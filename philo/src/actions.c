@@ -6,12 +6,13 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:56:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/13 02:50:41 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:51:50 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
+#include <pthread.h>
 #include "philosophers.h"
 
 void	philo_take_fork(t_fork *fork, t_philo *philo, int *forks_in_hand)
