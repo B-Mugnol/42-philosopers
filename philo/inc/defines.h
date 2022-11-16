@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:01 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/02 01:30:37 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:47:39 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,14 @@
 # include <pthread.h>
 # include <sys/time.h>
 
+// Maximum number of threads per process (found at /proc/sys/kernel/threads-max)
+# define MAX_THREADS		127364
+# define MAX_PROCESSES		4194304
+
 # define INCORRECT_USAGE	2
 
 # define MILLI_TO_MICRO		1000
 # define UNIT_TO_MICRO		1000000
-
-typedef enum e_action
-{
-	TAKE,
-	EAT,
-	SLEEP,
-	THINK,
-	DIE
-}	t_action;
-
-typedef struct s_philo
-{
-	int				id;
-	int				eat_count;
-	t_action		curr_action;
-	suseconds_t		last_ate;
-	struct s_table	*table;
-}	t_philo;
 
 typedef struct s_config
 {
@@ -48,11 +34,29 @@ typedef struct s_config
 	int			minimum_eat_count;
 }	t_config;
 
+typedef struct s_fork
+{
+	int				is_available;
+	pthread_mutex_t	lock;
+}	t_fork;
+
+typedef struct s_philo
+{
+	int				id;
+	int				eat_count;
+	int				forks_in_hand;
+	struct s_fork	*fork[2];
+	struct timeval	last_ate;
+	struct s_table	*table;
+	struct s_config	config;
+}	t_philo;
+
 typedef struct s_table
 {
 	int				philo_count;
+	int				has_corpse;
 	struct s_philo	*philo;
-	pthread_mutex_t	*fork;
+	struct s_fork	*fork;
 	pthread_mutex_t	lock;
 }	t_table;
 
