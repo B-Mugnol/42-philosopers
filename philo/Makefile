@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 21:48:28 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/11/02 00:10:37 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/11/18 23:29:28 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,38 @@ NAME		:=	philo
 # Header that includes all headers
 H_MASTER	:=	master.h
 # Headers
-HEADER_DIR	:=	inc	src/setup
-HEADER		:=	defines.h	setup.h	philosophers.h
+HEADER_DIR	:=	inc
+HEADER		:=	defines.h
+
+HEADER_DIR	+=	src/setup
+HEADER		+=	setup.h
+
+HEADER_DIR	+=	src/simulation
+HEADER		+=	simulation.h
+
+HEADER_DIR	+=	src/simulation/actions
+HEADER		+=	actions.h
+
+HEADER_DIR	+=	src/utilities
+HEADER		+=	error.h	time.h	utils.h
+
 H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
-SRC_DIR		:=	src	src/setup
-SRC			:=	main.c	error.c time.c	utils.c	verify.c
-SRC			+=	dismount.c	init.c	setup.c
+SRC_DIR	:=	src
+SRC		:=	main.c
+
+SRC_DIR	+=	src/setup
+SRC		+=	dismount.c	init.c	setup.c
+
+SRC_DIR	+=	src/simulation
+SRC		+=	simulation.c	simulation_utils.c
+
+SRC_DIR	+=	src/simulation/actions
+SRC		+=	actions.c	action_utils.c
+
+SRC_DIR	+=	src/utilities
+SRC		+=	error.c	time.c	utils.c
 
 # Object
 OBJ_DIR		:=	obj
@@ -43,7 +67,6 @@ OBJ			:=	$(SRC:%.c=$(OBJ_DIR)/%.o)
 # Precompiled header
 C_HEADER	:=	$(H_MASTER:%.h=$(OBJ_DIR)/%.h.gch)
 C_INCLUDE	:=	$(addprefix -include-pch , $(C_HEADER))
-
 
 # Inclusions:
 INCLUDE		:=	$(C_INCLUDE) $(H_INCLUDE)
@@ -68,19 +91,11 @@ $(OBJ): $(OBJ_DIR)/%.o: %.c $(C_HEADER) | $(OBJ_DIR)
 
 # Header precompiling
 $(C_HEADER): $(OBJ_DIR)/%.h.gch: %.h $(HEADER) | $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -o $@ $< $(H_INCLUDE)
+	$(CC) $(CFLAGS) -o $@ $< $(H_INCLUDE)
 
 # Directory making
 $(OBJ_DIR):
 	@mkdir -p $@
-
-# Run program using valgrind
-ifeq (vg,$(firstword $(MAKECMDGOALS)))
-VG_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-$(eval $(VG_ARGS):;@:)
-endif
-vg: all
-	valgrind -q --tool=helgrind ./$(NAME) $(VG_ARGS)
 
 # Norm: checks code for norm errors
 norm:
@@ -88,7 +103,7 @@ norm:
 
 # Clean: removes objects' directory
 clean:
-	@$(RM) $(OBJ_DIR) $(C_HEADER_DIR)
+	$(RM) $(OBJ_DIR) $(C_HEADER_DIR)
 
 # Full clean: removes objects' directory and generated libs/programs
 fclean: clean

@@ -6,12 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:20:35 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/13 01:27:54 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:11:40 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "setup.h"
-#include "philosophers.h"
+#include "utils.h"
 
 t_config	get_config(char **argv)
 {

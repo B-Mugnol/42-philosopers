@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 00:02:59 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/13 01:19:01 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:10:42 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define SETUP_H
 
 # include "defines.h"
+# include "error.h"
+# include <stdlib.h>
+# include <pthread.h>
 
 // setup.c
 t_config	get_config(char **argv);

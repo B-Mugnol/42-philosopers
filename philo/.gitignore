@@ -9,9 +9,19 @@
 # Source
 !src
 !src/*.c
+!src/*.h
 !src/setup/
 !src/setup/*.c
 !src/setup/*.h
+!src/simulation/
+!src/simulation/*.c
+!src/simulation/*.h
+!src/simulation/actions/
+!src/simulation/actions/*.c
+!src/simulation/actions/*.h
+!src/utilities/
+!src/utilities/*.c
+!src/utilities/*.h
 
 # Makefile
 !Makefile

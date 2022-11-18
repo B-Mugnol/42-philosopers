@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   master.h                                           :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:51:43 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 23:26:47 by bmugnol-         ###   ########.fr       */
+/*   Created: 2022/11/18 22:49:04 by bmugnol-          #+#    #+#             */
+/*   Updated: 2022/11/18 22:53:27 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MASTER_H
-# define MASTER_H
+#include "error.h"
 
-# include "utils.h"
-# include "defines.h"
-# include "error.h"
-# include "time.h"
-# include "setup.h"
-# include "actions.h"
-# include "simulation.h"
-
-#endif
+int	generic_error(int exit_code, char *locale, char *msg, char *usage)
+{
+	if (locale)
+	{
+		ft_putstr_fd(locale, 2);
+		if (msg)
+			ft_putstr_fd(": ", 2);
+		else
+			ft_putstr_fd("\n", 2);
+	}
+	if (msg)
+	{
+		ft_putstr_fd(msg, 2);
+		ft_putstr_fd("\n", 2);
+	}
+	if (usage)
+	{
+		ft_putstr_fd("Usage: ", 2);
+		ft_putstr_fd(usage, 2);
+		ft_putstr_fd("\n", 2);
+	}
+	return (exit_code);
+}

@@ -6,13 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:45:45 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/16 21:49:02 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:10:54 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <pthread.h>
-#include "philosophers.h"
+#include "setup.h"
 
 void	*dismount_forks(int fork_count, t_fork *fork)
 {

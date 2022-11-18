@@ -6,11 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:45:47 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/13 01:32:41 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:10:50 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "setup.h"
 
 t_philo	*init_philosophers(t_config config, t_table *table)
 {
@@ -34,7 +34,6 @@ t_philo	*init_philosophers(t_config config, t_table *table)
 			.forks_in_hand = 0,
 			.fork[0] = NULL,
 			.fork[1] = NULL,
-			.last_ate = {.tv_sec = 0, .tv_usec = 0},
 			.table = table,
 			.config = config};
 	return (philo);

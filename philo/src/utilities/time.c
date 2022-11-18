@@ -6,11 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:05:03 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/10/31 22:55:19 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:56:11 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/time.h>
+#include "time.h"
 
 suseconds_t	time_from_point_usec(struct timeval point)
 {

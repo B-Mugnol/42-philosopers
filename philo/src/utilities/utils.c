@@ -6,12 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 02:05:53 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/13 05:01:32 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:56:31 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <sys/time.h>
+#include "utils.h"
 
 static size_t	ft_strlen(const char *s)
 {

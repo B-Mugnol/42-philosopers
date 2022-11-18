@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions_utils.c                                    :+:      :+:    :+:   */
+/*   action_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:10:23 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/13 03:41:46 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:02:13 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include "philosophers.h"
+#include "actions.h"
+#include "utils.h"
 
 static void	philo_try_fork(t_philo *philo, t_fork *fork);
 
