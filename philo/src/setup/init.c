@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:45:47 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 23:10:50 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:45:57 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ t_philo	*init_philosophers(t_config config, t_table *table)
 
 t_fork	*init_forks(int fork_count)
 {
-	t_fork			*fork;
-	int				errno;
-	int				index;
+	t_fork	*fork;
+	int		errno;
+	int		index;
 
 	if (fork_count <= 0)
 		return (NULL);
