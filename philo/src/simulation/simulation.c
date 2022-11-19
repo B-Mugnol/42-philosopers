@@ -6,14 +6,14 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 05:14:44 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/19 01:11:50 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:36:31 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "simulation.h"
 #include "actions.h"	// philo_eat/sleep/think/wait_for_fork()
-#include <unistd.h>
-#include <sys/time.h>
+#include <unistd.h>		// usleep()
+#include <sys/time.h>	// gettimeofday()
 
 static int	sit_philosophers(t_table *table);
 static void	*table_manager(void *sim_table);
