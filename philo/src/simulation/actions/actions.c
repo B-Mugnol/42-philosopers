@@ -6,14 +6,14 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:56:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 23:02:30 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:53:24 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "actions.h"
-#include "error.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "error.h"	// generic_error()
+#include <stdio.h>	// printf()
+#include <stdlib.h>	// NULL macro
 
 void	philo_take_fork(t_fork *fork, t_philo *philo, int *forks_in_hand)
 {

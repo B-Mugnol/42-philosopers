@@ -6,15 +6,15 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:01 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/16 19:47:39 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:59:19 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINES_H
 # define DEFINES_H
 
-# include <pthread.h>
-# include <sys/time.h>
+# include <pthread.h>	// typedef pthread_mutex_t
+# include <sys/time.h>	// typedef suseconds_t, typedef timeval
 
 // Maximum number of threads per process (found at /proc/sys/kernel/threads-max)
 # define MAX_THREADS		127364

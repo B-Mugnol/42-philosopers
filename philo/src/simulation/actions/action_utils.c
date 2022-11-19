@@ -6,12 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:10:23 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 23:02:13 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:49:29 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "actions.h"
-#include "utils.h"
+#include "utils.h"	// random_bool()
 
 static void	philo_try_fork(t_philo *philo, t_fork *fork);
 

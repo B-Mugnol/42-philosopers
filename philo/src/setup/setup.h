@@ -6,17 +6,17 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 00:02:59 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 23:10:42 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:47:34 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SETUP_H
 # define SETUP_H
 
-# include "defines.h"
-# include "error.h"
-# include <stdlib.h>
-# include <pthread.h>
+# include "defines.h"	// typedefs, macros
+# include "error.h"		// generic_error()
+# include <stdlib.h>	// malloc(), free(), macros
+# include <pthread.h>	// pthread_mutex_init(), pthread_mutex_destroy()
 
 // setup.c
 t_config	get_config(char **argv);

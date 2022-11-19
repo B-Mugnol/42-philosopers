@@ -6,12 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:20:35 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 23:11:40 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:46:49 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "setup.h"
-#include "utils.h"
+#include "utils.h"	// ft_atoi()
 
 t_config	get_config(char **argv)
 {

@@ -6,13 +6,16 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:52:50 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 23:25:34 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:08:58 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "defines.h"
-#include "setup.h"
-#include "simulation.h"
+#include "defines.h"	// typedefs t_config/t_table, INCORRECT_USAGE macro
+#include "utils.h"		// ft_atoi()
+#include "error.h"		// generic_error()
+#include "setup.h"		// get_config(), get_table(), dismount_table()
+#include "simulation.h"	// run_simulation()
+#include <stdlib.h>		// EXIT_FAILURE macro
 
 static int	verify_args(int argc, char **argv);
 

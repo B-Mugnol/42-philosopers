@@ -6,15 +6,15 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 22:51:05 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 22:56:44 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:05:41 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
-# include <unistd.h>
-# include <sys/time.h>
+# include <unistd.h>	// write()
+# include <sys/time.h>	// typedef timeval, gettimeofday()
 
 // utils.c
 int		is_digit_str(const char *str);
