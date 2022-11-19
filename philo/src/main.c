@@ -6,11 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:52:50 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/19 01:08:58 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/19 02:46:48 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "defines.h"	// typedefs t_config/t_table, INCORRECT_USAGE macro
+#include "defines.h"	// typedefs t_config/t_table, macros
 #include "utils.h"		// ft_atoi()
 #include "error.h"		// generic_error()
 #include "setup.h"		// get_config(), get_table(), dismount_table()
