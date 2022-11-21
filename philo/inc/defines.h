@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:01 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/19 00:59:19 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/21 21:16:20 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 // Maximum number of threads per process (found at /proc/sys/kernel/threads-max)
 # define MAX_THREADS		127364
-# define MAX_PROCESSES		4194304
 
 # define INCORRECT_USAGE	2
 
