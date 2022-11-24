@@ -6,7 +6,7 @@
 #    By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 21:48:28 by bmugnol-          #+#    #+#              #
-#    Updated: 2022/11/18 23:29:28 by bmugnol-         ###   ########.fr        #
+#    Updated: 2022/11/24 20:44:34 by bmugnol-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,7 @@ vpath	%.h		$(HEADER_DIR)
 vpath	%.c		$(SRC_DIR)
 
 # -----------------------RULES------------------------------------------------ #
-.PHONY: all vg norm clean fclean re
+.PHONY: all norm clean fclean re
 
 # Creates NAME
 all: $(NAME)
