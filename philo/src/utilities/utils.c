@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 02:05:53 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/18 22:56:31 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2023/01/08 23:30:22 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,4 @@ int	ft_atoi(const char *s)
 		s++;
 	}
 	return (num * sign);
-}
-
-int	random_bool(void)
-{
-	static long		seed = 0;
-	struct timeval	curr_time;
-
-	if (seed == 0)
-	{
-		seed = 42;
-		if (gettimeofday(&curr_time, NULL) == -1)
-			return (seed & 1);
-		if (curr_time.tv_usec < 2147483647)
-			seed = curr_time.tv_usec;
-	}
-	seed = (1103515245 * seed + 12345) % 2147483647;
-	return (seed & 1);
 }

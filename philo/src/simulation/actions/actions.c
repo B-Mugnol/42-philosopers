@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:56:36 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/19 00:53:24 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/25 22:23:13 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void	philo_eat(t_philo *philo)
 	if (philo->config.time_to_eat_usec >= philo->config.time_to_die_usec)
 		return (philo_die(philo, philo->config.time_to_die_usec));
 	usleep(philo->config.time_to_eat_usec);
-	pthread_mutex_lock(&philo->table->lock);
+	pthread_mutex_lock(&philo->lock);
 	philo->eat_count += 1;
-	pthread_mutex_unlock(&philo->table->lock);
+	pthread_mutex_unlock(&philo->lock);
 	philo->forks_in_hand = 0;
 	index = -1;
 	while (++index < 2)

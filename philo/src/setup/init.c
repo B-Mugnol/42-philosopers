@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 23:45:47 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/19 00:45:57 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/25 22:10:52 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ t_philo	*init_philosophers(t_config config, t_table *table)
 	philo = malloc(config.philosopher_count * sizeof(t_philo));
 	if (!philo)
 	{
-		generic_error(EXIT_FAILURE, "init_philosophers()",
-			"malloc failed", NULL);
+		generic_error(EXIT_FAILURE, "init_philo()", "malloc failed", NULL);
 		return (NULL);
 	}
 	index = -1;
 	while (++index <= config.philosopher_count - 1)
+	{
 		philo[index] = (t_philo){
 			.id = index + 1,
 			.eat_count = 0,
@@ -36,6 +36,8 @@ t_philo	*init_philosophers(t_config config, t_table *table)
 			.fork[1] = NULL,
 			.table = table,
 			.config = config};
+		pthread_mutex_init(&philo[index].lock, NULL);
+	}
 	return (philo);
 }
 

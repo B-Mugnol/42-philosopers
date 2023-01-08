@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:01 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/11/21 21:16:20 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/11/25 22:20:16 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <pthread.h>	// typedef pthread_mutex_t
 # include <sys/time.h>	// typedef suseconds_t, typedef timeval
+
+# ifndef INT_MAX
+#  define INT_MAX			2147483647
+# endif
 
 // Maximum number of threads per process (found at /proc/sys/kernel/threads-max)
 # define MAX_THREADS		127364
@@ -44,6 +48,7 @@ typedef struct s_philo
 	int				id;
 	int				eat_count;
 	int				forks_in_hand;
+	pthread_mutex_t	lock;
 	struct s_fork	*fork[2];
 	struct timeval	last_ate;
 	struct s_table	*table;
